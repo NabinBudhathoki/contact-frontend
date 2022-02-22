@@ -11,7 +11,9 @@ const About = () => {
 
   const callAboutPage = async () => {
     try {
-      const res = await fetch(baseUrl + '/about', {
+      const url = `${baseUrl}/about`
+      console.log(url)
+      const res = await fetch(url, {
         method: "GET",
         headers: {
           Accept: "application/json",
