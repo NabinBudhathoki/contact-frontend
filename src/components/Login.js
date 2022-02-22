@@ -1,6 +1,7 @@
 import React, {useState, useContext} from "react";
 import { NavLink ,useHistory} from "react-router-dom";
 import loginpic from "../images/pic.jpg";
+import {baseUrl} from "../utils/constants"
 
 import { UserContext } from "../App";
 
@@ -15,7 +16,7 @@ const Login = () => {
   const loginUser = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/signin", {
+    const res = await fetch(baseUrl + "/signin", {
       method: "POST",
       headers: {
         "Content-Type" : "application/json"

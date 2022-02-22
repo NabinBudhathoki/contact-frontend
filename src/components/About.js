@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import profilepic from "../images/photo.jpg"
 import {useHistory} from "react-router-dom";
 import aboutpic from "../images/aboutpic.jfif"
+import {baseUrl} from "../utils/constants"
 
 const About = () => {
 
@@ -10,7 +11,7 @@ const About = () => {
 
   const callAboutPage = async () => {
     try {
-      const res = await fetch('/about', {
+      const res = await fetch(baseUrl + '/about', {
         method: "GET",
         headers: {
           Accept: "application/json",

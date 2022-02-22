@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
+import {baseUrl} from "../utils/constants"
+
 
 const ContactList = (props) => {
   const [contacts, setContacts] = useState([]);
 
   const fetchContacts = async () => {
     try {
-      const res = await fetch("/contact", {
+      const res = await fetch(baseUrl + "/contact", {
         method: "GET",
         headers: {
           // Accept: "application/json",
@@ -29,7 +31,7 @@ const ContactList = (props) => {
 
   const deleteContact = async (id) => {
     try {
-      const res = await fetch(`/contact/${id}`, {
+      const res = await fetch(`${baseUrl}/contact/${id}`, {
         method: "DELETE",
         headers: {
           // Accept: "application/json",

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import signpic from "../images/signup.jpg";
+import {baseUrl} from "../utils/constants"
 
 const Signup = () => {
   const history = useHistory();
@@ -28,7 +29,7 @@ const Signup = () => {
 
     const { name, email, phone, work, password, cpassword } = user;
 
-    const res = await fetch("/register", {
+    const res = await fetch(baseUrl + "/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

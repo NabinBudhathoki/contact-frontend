@@ -2,6 +2,8 @@ import React, { useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 
 import { UserContext } from "../App";
+import {baseUrl} from "../utils/constants"
+
 
 const Logout = () => {
 
@@ -10,7 +12,7 @@ const Logout = () => {
     const history = useHistory();
 
     useEffect(() => {
-        fetch('/logout', {
+        fetch(baseUrl + '/logout', {
             method: "GET",
             headers: {
               Accept: "application/json",
